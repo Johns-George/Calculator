@@ -1,0 +1,53 @@
+.calc{
+    background-color:gray;
+    height:510px;
+    width:500px;
+    margin:auto;
+    margin-top:75px;
+    border-radius: 10px;
+}
+#text{
+    width:470px;
+    margin-left: 12px;
+    margin-top: 10px;
+    height:50px;
+    font-size: 40px;
+    border: none;
+    resize:none;
+}
+#text1{
+    width: 470px;
+    height: 50px;
+    margin-top:none;
+    margin-left: 12px;
+    font-size: 40px;
+    resize:none;
+   text-align: right;
+    border: none;
+}
+.button{
+    width:490px;
+    height:390px;
+    margin:auto;
+}
+button{
+    background-color: orange;
+}
+.one{
+    width:110px;
+    height:50px;
+    border-radius: 100px;
+    border:none;
+    font-size: 20px;
+}
+.two{
+    width:250px;
+    height:50px;
+    border-radius: 100px;
+    border:none;
+    font-size: 20px;
+}
+button:hover{
+    cursor: pointer;
+    background-color: yellow;
+}
