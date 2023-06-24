@@ -1,9 +1,13 @@
+.calcul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
 .calc{
     background-color:gray;
     height:510px;
     width:500px;
-    margin:auto;
-    margin-top:75px;
     border-radius: 10px;
 }
 #text{

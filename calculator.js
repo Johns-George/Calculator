@@ -16,7 +16,6 @@ function calculator(val)
     document.getElementById("text").value+=val;
     document.getElementById("text1").value+=val;
     oldvalue+=val;
-    //console.log(oldvalue)
 }
 function operator(v)
 {
@@ -106,6 +105,8 @@ oldvalue+=zero;
 function clearscreen()
 {
     isoperatorclicked=false;
+    if(oldvalue.charAt(oldvalue.length-1)==='.')
+    isdotclicked=false;
     document.getElementById('text').value=document.getElementById('text').value.slice(0,-1)
     document.getElementById('text1').value=document.getElementById('text1').value.slice(0,-1)
     oldvalue=oldvalue.slice(0,-1)
