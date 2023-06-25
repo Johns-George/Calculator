@@ -16,15 +16,22 @@ function calculator(val)
     document.getElementById("text").value+=val;
     document.getElementById("text1").value+=val;
     oldvalue+=val;
+    console.log(oldvalue)
 }
 function operator(v)
 {
     isdotclicked=false;
     if(isoperatorclicked)
     {
+        if(v==='*'){
+            document.getElementById("text").value=document.getElementById("text").value.slice(0,-1)+'x'
+            oldvalue=oldvalue.slice(0,-1)+v;
+        }
+        else{
         document.getElementById("text").value=document.getElementById("text").value.slice(0,-1)+v;
         oldvalue=oldvalue.slice(0,-1)+v;
     }
+}
     else if(isequalclicked){
         document.getElementById('text').value=document.getElementById('text1').value+v;
     oldvalue=document.getElementById('text1').value+v;
@@ -62,7 +69,7 @@ function equalclick()
     var result = eval(oldvalue);
     document.getElementById("text1").value=result;
     document.getElementById("text").value=''
-    //console.log(oldvalue)
+    console.log(oldvalue)
     isoperatorclicked=false;
 }
 function clearall()
@@ -91,10 +98,16 @@ function dot(dots)
 }
 function zero(zero){
     isoperatorclicked=false;
-    if(document.getElementById('text1').value=='0')
+    if(isequalclicked)
     {
-        document.getElementById('text1').value='0';
-        document.getElementById('text').value=oldvalue;
+        isequalclicked=false;
+        oldvalue=''
+        document.getElementById("text").value=''
+        document.getElementById("text1").value=''
+    }
+    if(document.getElementById('text1').value=='')
+    {
+        document.getElementById('text1').value='';
     }
     else{
 document.getElementById('text').value+=zero;
