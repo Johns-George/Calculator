@@ -33,11 +33,19 @@ function operator(v)
     }
 }
     else if(isequalclicked){
+        if(v==='*'){
+            document.getElementById("text").value=document.getElementById("text1").value+'x'
+            oldvalue=document.getElementById('text1').value+v;
+            document.getElementById('text1').value=''
+            isequalclicked=false;
+        }
+        else{
         document.getElementById('text').value=document.getElementById('text1').value+v;
     oldvalue=document.getElementById('text1').value+v;
     document.getElementById('text1').value=''
     isequalclicked=false;
     }
+}
     else if(v=='%'){
 document.getElementById("text").value+=v;
 oldvalue=oldvalue+'/100*';
@@ -45,7 +53,7 @@ document.getElementById("text1").value=''
 }
 else if(v=='*')
 {
-    document.getElementById("text").value=oldvalue+'x'
+    document.getElementById("text").value=document.getElementById("text").value+'x'
     oldvalue=oldvalue+v;
     document.getElementById("text1").value=''
 }
