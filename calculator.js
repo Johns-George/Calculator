@@ -4,7 +4,6 @@ var isdotclicked=false;
 var isoperatorclicked=false;
 function calculator(val)
 {
-    isoperatorclicked=false;
     if(isequalclicked)
     {
         isequalclicked=false;
@@ -16,7 +15,7 @@ function calculator(val)
     document.getElementById("text").value+=val;
     document.getElementById("text1").value+=val;
     oldvalue+=val;
-    console.log(oldvalue)
+   isoperatorclicked=false;
 }
 function operator(v)
 {
@@ -128,7 +127,32 @@ function clearscreen()
     isoperatorclicked=false;
     if(oldvalue.charAt(oldvalue.length-1)==='.')
     isdotclicked=false;
-    document.getElementById('text').value=document.getElementById('text').value.slice(0,-1)
+    if(document.getElementById('text').value[document.getElementById('text').value.length-2]==='+'){
+        isoperatorclicked=true;
+    }
+    if(document.getElementById('text').value[document.getElementById('text').value.length-2]==='-'){
+        isoperatorclicked=true;
+    }
+    if(document.getElementById('text').value[document.getElementById('text').value.length-2]==='*'){
+        isoperatorclicked=true;
+    }
+    if(document.getElementById('text').value[document.getElementById('text').value.length-2]==='/'){
+        isoperatorclicked=true;
+    }
+    if(document.getElementById('text').value[document.getElementById('text').value.length-2]==='%'){
+        isoperatorclicked=true;
+    }
+    if(oldvalue[oldvalue.length-1]=='+')
+    document.getElementById('text1').value=  document.getElementById('text').value
+    if(oldvalue[oldvalue.length-1]=='-')
+    document.getElementById('text1').value=  document.getElementById('text').value
+    if(oldvalue[oldvalue.length-1]=='*')
+    document.getElementById('text1').value=  document.getElementById('text').value
+    if(oldvalue[oldvalue.length-1]=='/')
+    document.getElementById('text1').value=  document.getElementById('text').value
+    if(oldvalue[oldvalue.length-1]=='%')
+    document.getElementById('text1').value=  document.getElementById('text').value
     document.getElementById('text1').value=document.getElementById('text1').value.slice(0,-1)
+    document.getElementById('text').value=document.getElementById('text').value.slice(0,-1)
     oldvalue=oldvalue.slice(0,-1)
 }

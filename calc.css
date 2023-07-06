@@ -11,16 +11,15 @@
 }
 .calc{
     background-color:transparent;
-    height:500px;
-    width:390px;
+    height:460px;
+    width:340px;
     border-radius: 10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    
     border: 2px solid rgb(203, 184, 15);
 }
 #text{
-    width:360px;
-    margin-left: 12px;
+    width:315px;
+    margin-left: 14px;
     margin-top: 10px;
     height:50px;
     font-size: 40px;
@@ -29,10 +28,10 @@
     pointer-events: none;
 }
 #text1{
-    width: 360px;
+    width: 315px;
     height: 50px;
     margin-top:none;
-    margin-left: 12px;
+    margin-left: 14px;
     font-size: 40px;
     resize:none;
    text-align: right;
@@ -40,13 +39,13 @@
     pointer-events: none;
 }
 .button{
-    height:390px;
+    height:350px;
 }
 button{
     background-color: rgb(203, 184, 15);
 }
 .one{
-    width:80px;
+    width:70px;
     height:50px;
     border-radius:0px;
     border:none;
@@ -54,7 +53,7 @@ button{
     margin-left: 10px;
 }
 .two{
-    width:175px;
+    width:150px;
     height:50px;
     border:none;
     font-size: 20px;
