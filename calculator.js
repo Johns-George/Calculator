@@ -69,14 +69,14 @@ function equalclick()
     {
         document.getElementById('text').value=document.getElementById('text').value.slice(0,-1)
         oldvalue=oldvalue.slice(0,-1)
-        console.log(oldvalue)
+       
     }
     isdotclicked=false;
     isequalclicked=true;
     var result = eval(oldvalue);
     document.getElementById("text1").value=result;
     document.getElementById("text").value=''
-    console.log(oldvalue)
+    
     isoperatorclicked=false;
 }
 function clearall()
@@ -143,16 +143,48 @@ function clearscreen()
         isoperatorclicked=true;
     }
     if(oldvalue[oldvalue.length-1]=='+')
-    document.getElementById('text1').value=  document.getElementById('text').value
-    if(oldvalue[oldvalue.length-1]=='-')
-    document.getElementById('text1').value=  document.getElementById('text').value
-    if(oldvalue[oldvalue.length-1]=='*')
-    document.getElementById('text1').value=  document.getElementById('text').value
-    if(oldvalue[oldvalue.length-1]=='/')
-    document.getElementById('text1').value=  document.getElementById('text').value
-    if(oldvalue[oldvalue.length-1]=='%')
-    document.getElementById('text1').value=  document.getElementById('text').value
+    {
+   var dummy=oldvalue.split(/[^0-9\.]+/)
+  
+    document.getElementById('text1').value=dummy[dummy.length-2]
+    document.getElementById('text').value=document.getElementById('text').value.slice(0,-1)
+    oldvalue=oldvalue.slice(0,-1)
+}
+   else if(oldvalue[oldvalue.length-1]=='-')
+    {
+   var dummy=oldvalue.split(/[^0-9\.]+/)
+  
+    document.getElementById('text1').value=dummy[dummy.length-2]
+    document.getElementById('text').value=document.getElementById('text').value.slice(0,-1)
+    oldvalue=oldvalue.slice(0,-1)
+    }
+    else if(document.getElementById('text').value[document.getElementById('text').value.length-1]=='x')
+    {
+   var dummy=oldvalue.split(/[^0-9\.]+/)
+   console.log(dummy[dummy.length-2])
+    document.getElementById('text1').value=dummy[dummy.length-2]
+    document.getElementById('text').value=document.getElementById('text').value.slice(0,-1)
+    oldvalue=oldvalue.slice(0,-1)
+    }
+    else if(oldvalue[oldvalue.length-1]=='/')
+    {
+   var dummy=oldvalue.split(/[^0-9\.]+/)
+   console.log(dummy[dummy.length-2])
+    document.getElementById('text1').value=dummy[dummy.length-2]
+    document.getElementById('text').value=document.getElementById('text').value.slice(0,-1)
+    oldvalue=oldvalue.slice(0,-1)
+    }
+    else if(document.getElementById('text').value[document.getElementById('text').value.length-1]=='%')
+    {
+   var dummy=document.getElementById('text').value.split(/[^0-9\.]+/)
+   //console.log(dummy)
+    document.getElementById('text1').value=dummy[dummy.length-2]
+    document.getElementById('text').value=document.getElementById('text').value.slice(0,-1)
+    oldvalue=oldvalue.slice(0,-1)
+    }
+    else{
     document.getElementById('text1').value=document.getElementById('text1').value.slice(0,-1)
     document.getElementById('text').value=document.getElementById('text').value.slice(0,-1)
     oldvalue=oldvalue.slice(0,-1)
+}
 }
